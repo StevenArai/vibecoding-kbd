@@ -1,0 +1,31 @@
+# Build artifacts
+build/
+out/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+Makefile
+compile_commands.json
+*.elf
+*.hex
+*.bin
+*.uf2
+*.dis
+*.map
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
+*.pem
