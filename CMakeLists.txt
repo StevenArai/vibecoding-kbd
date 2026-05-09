@@ -11,6 +11,7 @@ project(vibecoding-kbd C CXX ASM)
 
 pico_sdk_init()
 
+# Pre-generated pio header to avoid pioasm host C++ compiler requirement
 add_executable(vibecoding-kbd
     src/main.c
     src/st7735.c
@@ -20,8 +21,6 @@ add_executable(vibecoding-kbd
     src/voice_uart.c
     src/buzzer.c
 )
-
-pico_generate_pio_header(vibecoding-kbd ${CMAKE_CURRENT_SOURCE_DIR}/src/ws2812.pio)
 
 target_include_directories(vibecoding-kbd PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src

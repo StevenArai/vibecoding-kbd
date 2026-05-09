@@ -3,6 +3,7 @@
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
 #include "hardware/pwm.h"
+#include <stdlib.h>
 
 #define CS_LOW  gpio_put(ST7735_CS_PIN, 0)
 #define CS_HIGH gpio_put(ST7735_CS_PIN, 1)
@@ -107,7 +108,7 @@ void st7735_init(void) {
     sleep_ms(100);
 
     // Backlight PWM
-    uint slice_num = pwm_gpio_to_slice(ST7735_BL_PIN);
+    uint slice_num = pwm_gpio_to_slice_num(ST7735_BL_PIN);
     pwm_config cfg = pwm_get_default_config();
     pwm_config_set_wrap(&cfg, 255);
     pwm_init(slice_num, &cfg, true);

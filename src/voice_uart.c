@@ -24,7 +24,7 @@ void voice_uart_init(void) {
     gpio_set_function(VOICE_UART_TX_PIN, GPIO_FUNC_UART);
     gpio_set_function(VOICE_UART_RX_PIN, GPIO_FUNC_UART);
     uart_set_hw_flow(VOICE_UART, false, false);
-    uart_set_format(VOICE_UART, VOICE_UART_BAUD, 8, UART_PARITY_NONE, 1);
+    uart_set_format(VOICE_UART, 8, 1, UART_PARITY_NONE);
 }
 
 // Call this from main loop to poll UART

@@ -1,9 +1,12 @@
 #include "pico/stdlib.h"
+#include <stdio.h>
+#include <string.h>
 #include "st7735.h"
 #include "ws2812.h"
 #include "matrix.h"
 #include "encoder.h"
 #include "voice_uart.h"
+#include "buzzer.h"
 
 int main(void) {
     stdio_init_all();
